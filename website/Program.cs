@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using webpage;
+using website;
 using Skclusive.Material.Component;
 using Skclusive.Material.Core;
 using Skclusive.Core.Component;
