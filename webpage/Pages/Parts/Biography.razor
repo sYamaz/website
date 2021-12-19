@@ -1,0 +1,21 @@
+﻿<Table>
+    @foreach (var item in items)
+    {
+        <TableRow>
+            <TableCell>@item.head</TableCell>
+            <TableCell>@item.content</TableCell>
+        </TableRow>
+    }
+</Table>
+
+@code {
+
+    List<(string head, string content)> items = new List<(string head, string content)>
+    {
+        ("1990", "Born in Tokyo, Japan. And moved to Ibaraki."),
+        ("2013", "Completed bachelor's degree in Electrical, Electronic and Computer Engineering at Tokyo University of Science."),
+        ("2013 to present", "Work as a software developper at Orientalmotor co., ltd."),
+    };
+
+}
+
