@@ -31,7 +31,7 @@
         <AppBar Position="@AppBarPosition.Fixed">
             <Toolbar>
 
-                <Button OnClick="@(s => NavTo("/"))" Color="Color.Inherit" Style="text-transform:none;">
+                <Button OnClick="@(s => NavTo(""))" Color="Color.Inherit" Style="text-transform:none;">
                     <Typography NoWrap Variant="TypographyVariant.H6">
                         sYamaz
                     </Typography>
@@ -73,7 +73,7 @@
                               AnchorRef="@ButtonRef"
                               OnClose="@HandleClose">
 
-                            <MenuItem Class="styled-menu-item" Selected="@(navman.Uri == navman.BaseUri + "")" OnClick="@(s => NavTo("/"))">
+                            <MenuItem Class="styled-menu-item" Selected="@(navman.Uri == navman.BaseUri + "")" OnClick="@(s => NavTo(""))">
                                 <ListItemText Primary="About" />
                             </MenuItem>
                             <MenuItem Class="styled-menu-item" Selected="@(navman.Uri == navman.BaseUri + "apps")" OnClick="@(s => NavTo("apps"))">
