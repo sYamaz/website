@@ -10,8 +10,9 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.0" PrivateAssets="all" />
-    <PackageReference Include="PublishSPAforGitHubPages.Build" Version="1.3.2" />
+    <PackageReference Include="PublishSPAforGitHubPages.Build" Version="1.3.6" />
     <PackageReference Include="Skclusive.Material.Component" Version="5.2.0" />
+    <PackageReference Include="Skclusive.Material.Layout" Version="5.2.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +23,7 @@
     <None Remove="Pages\RoutineTree\" />
     <None Remove="Pages\Apps\RoutineTree\" />
     <None Remove="Pages\Parts\" />
+    <None Remove="Skclusive.Material.Layout" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\images\" />

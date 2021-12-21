@@ -1,4 +1,5 @@
 ﻿@inject NavigationManager navman
+
 <style>
 
 
@@ -48,6 +49,9 @@
                         <Button Style="text-transform:none;" Color="Color.Inherit" Class="@("styled-nav-item" + ClassActive("https://github.com/sYamaz/website"))" OnClick="@(s => NavTo("https://github.com/sYamaz/website"))"><Typography NoWrap Variant="TypographyVariant.Body1">Source</Typography></Button>
                     </div>
                 </Hidden>
+                
+                <ToggleTheme />
+                
                 <!--menuは画面サイズが小さい時だけ表示-->
                 <Hidden SmallUp Context="HiddenContext">
                     <div class="@HiddenContext.Class">
@@ -88,8 +92,7 @@
                         </Menu>
                     </div>
                 </Hidden>
-
-
+                
             </Toolbar>
         </AppBar>
         
