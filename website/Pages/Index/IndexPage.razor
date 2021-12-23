@@ -1,51 +1,21 @@
 ﻿@page "/"
-@using website.Pages.Parts
-<style>
-    .styled-root-paper {
-        padding: 24px 16px;
-        margin: 16px;
-    }
-
-    .styled-section {
-        padding: 24px 16px;
-        margin-top: 16px;
-    }
-</style>
+@using website.Pages.Index.Parts
+@using website.Components
 
 <PageTitle>sYamaz</PageTitle>
-<Paper Class="styled-root-paper">
-    <Typography Variant="TypographyVariant.H4">
-        Shun Yamazaki (sYamaz)
-    </Typography>
 
-
-    <section class="styled-section">
-        <Typography Variant="TypographyVariant.H5">
-            Biography
-        </Typography>
-        <Biography />
-    </section>
-
-    
-
-
-    <section class="styled-section">
-        <Typography Variant="TypographyVariant.H5">
-            Hobby
-        </Typography>
-
-        <Hobby/>
-    </section>
-
-    <section class="styled-section">
-        <Typography Variant="TypographyVariant.H5">
-            Web
-        </Typography>
-
-        <WebActivity/>
-        
-    </section>
-</Paper>
+<Typography Variant="TypographyVariant.H4">
+    Shun Yamazaki (sYamaz)
+</Typography>
+<Box Padding="2" Margin="2">
+    <Biography />
+</Box>
+<Box Padding="2" Margin="2">
+    <Hobby/>
+</Box>
+<Box Padding="2" Margin="2">
+    <WebActivity/>
+</Box>
 
 
 

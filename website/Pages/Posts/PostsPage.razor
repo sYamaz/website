@@ -1,29 +1,15 @@
 ﻿@page "/posts"
 @inject HttpClient client
-<style>
-    .styled-root-paper {
-        padding: 24px 16px;
-        margin: 16px;
-    }
+@using website.Components
+@using website.Pages.Posts.Parts
 
-    .styled-section {
-        padding: 24px 16px;
-        margin-top: 16px;
-    }
-</style>
 
 <PageTitle>Posts - sYamaz</PageTitle>
 
-<Paper Class="styled-root-paper">
-    <Typography Variant="TypographyVariant.H5">Posts</Typography>
-
-    <section class="styled-section">
-        <Typography Variant="TypographyVariant.H6">Qiita</Typography>
-        <Typography Variant="TypographyVariant.Body1">
-            <Hyperlink Href="https://qiita.com/sYamaz">https://qiita.com/sYamaz</Hyperlink>
-        </Typography>
-    </section>
-</Paper>
+<Typography Variant="TypographyVariant.H5">Posts</Typography>
+<Box Padding="2" Margin="2">
+    <Qiita/>
+</Box>
 
 @code {
 

@@ -1,77 +1,43 @@
 ﻿@page "/apps"
 
 @inject NavigationManager navman
-
+@using website.Components
+@using website.Pages.Apps.Parts
+@using website.Pages.Apps.Datas
 <style>
-    .styled-root-paper {
-        padding: 24px 16px;
-        margin: 16px;
+    .styled-linkbutton {
+        @*縦並び*@
+        display: block;
+        text-transform:none;
     }
 
-    .styled-section {
-        padding: 24px 16px;
-        margin-top: 16px;
-    }
+        .styled-linkbutton:is(:hover) {
+            text-decoration: underline;
+        }
 </style>
 
 <PageTitle>Apps - sYamaz</PageTitle>
 
-<Paper Class="styled-root-paper">
-    <Typography Variant="TypographyVariant.H5">
-        Apps
-    </Typography>
 
-    <section class="styled-section">
-        @foreach (var item in Datas)
-        {
+<Typography Variant="TypographyVariant.H5">
+    Apps
+</Typography>
 
-            <Card Style="display:flex;">
-                <CardMedia Style="height:256px; width:387px;"
-                           Image="@item.ImagePath"
-                           Title="@item.Title" />
-                <div style="display: flex; flex-direction: column;">
-                    <CardContent Style="flex: 1 0 auto;">
-                        <Typography Variant="@TypographyVariant.H6"
-                                    Component="h5">
-                            @item.Title
-                        </Typography>
-                        <Typography Variant="@TypographyVariant.Body1"
-                                    Color="@Color.TextSecondary">
-                            @item.Description
-                        </Typography>
-                    </CardContent>
-                    <Divider/>
-                    <CardActions>
-                        <Button style="text-transform:none;" Href="@item.ReadMoreURL" >Read more</Button>
-                    </CardActions>
-                </div>
 
-            </Card>
+@foreach (var item in Datas)
+{
+    <Box Padding="2" Margin="2">
+        <AppCardView AppData="@item" />
+    </Box>
+}
 
-        }
-    </section>
-</Paper>
 
 
 @code {
 
-    public interface IAppData
-    {
-        string Title { get; }
-        string Description { get; }
-        string ImagePath { get; }
-        string ReadMoreURL { get; }
-    }
 
-    public class AnyAppData : IAppData
-    {
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public string ImagePath { get; set; }
-        public string ReadMoreURL { get; set; }
-    }
 
-    private IEnumerable<IAppData> Datas
+    private IEnumerable<AnyAppData> Datas
     {
         get
         {
@@ -81,6 +47,8 @@
                 Description = "Task management application that helps you accomplish your daily routine tasks.",
                 ReadMoreURL = "https://syamaz.github.io/RoutineTree/",
                 ImagePath = "images/RoutineTree.png",
+                Status = AppStatus.inReview,
+                SupportPlatform = SupportPlatform.iOS
             };
         }
     }
