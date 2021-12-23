@@ -1,0 +1,29 @@
+﻿@namespace website.Pages.Index.Parts
+<Typography Variant="TypographyVariant.H5">
+    Hobby
+</Typography>
+<Typography Variant="TypographyVariant.Body1" Style="padding-left: 16px;">
+    @string.Join(", ", items.Select(item => item.Name))
+</Typography>
+
+
+@code {
+
+    class HobbyItem
+    {
+        public HobbyItem(string name)
+        {
+            this.Name = name;
+        }
+        public string Name { get; }
+    }
+
+    List<HobbyItem> items = new List<HobbyItem>
+{
+        new HobbyItem("Music🎵"),
+        new HobbyItem("Guitar🎸"),
+        new HobbyItem("Ramen🍜")
+    };
+
+}
+

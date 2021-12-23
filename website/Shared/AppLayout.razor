@@ -1,0 +1,119 @@
+﻿@inherits MaterialLayoutComponent
+@inject NavigationManager navman
+@using website.Components
+
+<style>
+
+
+    .styled-menu-item:not(:active):is(:hover) {
+        /*カーソル当てた時の強調*/
+        background-color: var(--theme-palette-primary-main, #90caf9);
+        text-decoration: underline;
+        color: white;
+    }
+
+    .styled-menu-item:active {
+        /*現在表示しているページのMenuItemの色変更*/
+        background-color: var(--theme-palette-primary-main, #fff)
+    }
+
+    .styled-nav-item:is(:hover) {
+        background-color: var(--theme-palette-primary-main, #90caf9);
+        text-decoration: underline;
+    }
+
+    .styled-nav-item__active {
+        background-color: var(--theme-palette-primary-main, #fff)
+    }
+</style>
+
+<MainLayout TopbarClass="App-Topbar" >
+
+    <TitleContent>
+        <Button OnClick="@(s => NavTo(""))" Color="Color.Inherit" Style="text-transform:none;">
+            <Typography NoWrap Variant="TypographyVariant.H6">
+                sYamaz
+            </Typography>
+        </Button>
+    </TitleContent>
+
+
+    <ActionsContent>
+        <Hidden ExtraSmallDown Context="HiddenContext">
+            <div class="@HiddenContext.Class">
+                @foreach (var navItem in navigationItems)
+                {
+                    <Button Style="text-transform:none;"
+                            Color="Color.Inherit"
+                            Class="@("styled-nav-item" + ClassActive(navItem.Path))"
+                            OnClick="@(s => NavTo(navItem.Path))">
+                        <Typography NoWrap Variant="TypographyVariant.Body1">@navItem.Title</Typography>
+                    </Button>
+                }
+              
+            </div>
+        </Hidden>
+        <ToggleTheme />
+    </ActionsContent>
+
+    <BodyContent>
+        <Box Padding="3" Class="App-Body">
+            @Body
+        </Box>
+    </BodyContent>
+    <SidebarContent>
+        <Navigation Items="@navigationItems"/>
+    </SidebarContent>
+</MainLayout>
+
+@code {
+    private void NavTo(string page)
+    {
+        navman.NavigateTo(page);
+        HandleClose(MenuCloseReason.BackdropClick);
+    }
+
+    private bool Open { set; get; }
+
+    private IReference ButtonRef { set; get; } = new Reference();
+
+    private List<NavigationItem> navigationItems = new List<NavigationItem>
+    {
+        new NavigationItem{Path = "", Title = "About"},
+        new NavigationItem{Path = "apps", Title = "Apps"},
+        new NavigationItem{Path = "posts", Title = "Posts"},
+        new NavigationItem{Path = "https://github.com/sYamaz/website", Title = "Source", Icon=@<GitHubIcon />},
+    };
+
+    private void HandleClose(EventArgs args)
+    {
+
+        Open = false;
+
+        StateHasChanged();
+    }
+
+    private void HandleClose(MenuCloseReason reason)
+    {
+        Open = false;
+
+        StateHasChanged();
+    }
+
+    private void OnOpen()
+    {
+
+
+        Open = true;
+
+        StateHasChanged();
+    }
+
+    private string ClassActive(string page)
+    {
+        System.Diagnostics.Debug.WriteLine(page);
+        return navman.BaseUri + page == navman.Uri ? " styled-nav-item__active" : "";
+
+    }
+}
+

@@ -1,0 +1,34 @@
+﻿@namespace website.Pages.Index.Parts
+<style>
+    .styled-linkbutton {
+        @*縦並び*@
+        display: block;
+    }
+
+        .styled-linkbutton:is(:hover) {
+            text-decoration: underline;
+        }
+</style>
+
+<Typography Variant="TypographyVariant.H5">
+    Web
+</Typography>
+@foreach (var item in items)
+{
+    <Button Class="styled-linkbutton" style="text-transform:none;" Role="link">
+        <Hyperlink Href="@item.url">@item.name</Hyperlink>
+    </Button>
+
+}
+
+
+@code
+{
+
+    List<(string name, string url)> items = new List<(string name, string url)>
+{
+        ("Twitter(@ShunYamazaki5)", "https://twitter.com/ShunYamazaki5"),
+        ("GitHub(@sYamaz)", "https://github.com/sYamaz")
+    };
+}
+
