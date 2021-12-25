@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1C3DA517-20C7-46A1-977E-63E4ACE96597}"
 	ProjectSection(SolutionItems) = preProject
 		readme.md = readme.md
+		publish.sh = publish.sh
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "website", "website\website.csproj", "{B505BA1D-CF7B-4225-8D98-A0132C52ACF4}"
