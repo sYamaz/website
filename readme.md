@@ -6,16 +6,13 @@ https://syamaz.github.io/website/
 
 * [PublishSPAforGitHubPages.Build - GitHub](https://github.com/jsakamoto/PublishSPAforGitHubPages.Build)
 * [Skclusive.Material.Component - GitHub](https://github.com/skclusive/Skclusive.Material.Component)
+* [Skclusive.Material.Layout - GitHub](https://github.com/skclusive/Skclusive.Material.Layout)
 
 ## How to publish
 
 ```bash
-dotnet publish -c:Release -p:GHPages=true
-
-# Copy all published files
-
-cp -r ./website/bin/Release/net6.0/publish/wwwroot/. ./docs
-
+cd website
+sh publish.sh
 
 # Commit and push
 
