@@ -27,7 +27,7 @@
 @foreach (var item in Datas)
 {
     <Box Padding="2" Margin="2">
-        <AppCardView AppData="@item" />
+        <WorkCardView WorkData="@item" />
     </Box>
 }
 
@@ -37,17 +37,17 @@
 
 
 
-    private IEnumerable<AnyAppData> Datas
+    private IEnumerable<AnyWorkData> Datas
     {
         get
         {
-            yield return new AnyAppData
+            yield return new AnyWorkData
             {
                 Title = "RoutineTree",
                 Description = "Task management application that helps you accomplish your daily routine tasks.",
                 ReadMoreURL = "https://syamaz.github.io/RoutineTree/",
                 ImagePath = "images/RoutineTree.png",
-                Status = AppStatus.inReview,
+                Status = WorkStatus.inReview,
                 SupportPlatform = SupportPlatform.iOS
             };
         }

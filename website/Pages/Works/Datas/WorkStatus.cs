@@ -1,6 +1,6 @@
 ﻿namespace website.Pages.Works.Datas
 {
-    public enum AppStatus
+    public enum WorkStatus
     {
         underDevelop,
         inReview,
