@@ -1,0 +1,49 @@
+﻿@using website.Pages.Works.Datas
+<Card>
+
+    <CardMedia Style="height:256px;"
+               Image="@AppData.ImagePath"
+               Title="@AppData.Title" />
+    <CardContent>
+        <Typography Variant="@TypographyVariant.H6"
+                    Component="h5">
+            @AppData.Title
+        </Typography>
+
+        <Typography Variant="@TypographyVariant.Body1"
+                    Color="@Color.TextSecondary">
+            @AppData.Description
+        </Typography>
+        <Divider Style="margin:4px;"/>
+        <Typography Variant="@TypographyVariant.Body2" Color="@Color.TextSecondary">
+            Platform: @(string.Join(", ", convertToFlags(AppData.SupportPlatform).Select(f => f.ToString())))
+        </Typography>
+        <Typography Variant="@TypographyVariant.Body2" Color="@Color.TextSecondary">
+            Status: @(AppData.Status.ToString())
+        </Typography>
+    </CardContent>
+    <Divider />
+    <CardActions>
+        <Button Class="styled-linkbutton" Role="link">
+            <Hyperlink Href="@AppData.ReadMoreURL">Read more</Hyperlink>
+        </Button>
+    </CardActions>
+</Card>
+
+
+@code {
+    [Parameter]
+    public AnyAppData AppData { get; set; }
+
+    IEnumerable<SupportPlatform> convertToFlags(SupportPlatform platform)
+    {
+        foreach(var flag in Enum.GetValues<SupportPlatform>())
+        {
+            if(platform.HasFlag(flag) && flag != SupportPlatform.none)
+            {
+                yield return flag;
+            }
+        }
+    }
+}
+

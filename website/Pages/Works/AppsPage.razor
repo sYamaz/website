@@ -1,0 +1,58 @@
+﻿@page "/works"
+
+@inject NavigationManager navman
+@using website.Components
+@using website.Pages.Works.Parts
+@using website.Pages.Works.Datas
+<style>
+    .styled-linkbutton {
+        @*縦並び*@
+        display: block;
+        text-transform:none;
+    }
+
+        .styled-linkbutton:is(:hover) {
+            text-decoration: underline;
+        }
+</style>
+
+<PageTitle>Works - sYamaz</PageTitle>
+
+
+<Typography Variant="TypographyVariant.H5">
+    Works
+</Typography>
+
+
+@foreach (var item in Datas)
+{
+    <Box Padding="2" Margin="2">
+        <AppCardView AppData="@item" />
+    </Box>
+}
+
+
+
+@code {
+
+
+
+    private IEnumerable<AnyAppData> Datas
+    {
+        get
+        {
+            yield return new AnyAppData
+            {
+                Title = "RoutineTree",
+                Description = "Task management application that helps you accomplish your daily routine tasks.",
+                ReadMoreURL = "https://syamaz.github.io/RoutineTree/",
+                ImagePath = "images/RoutineTree.png",
+                Status = AppStatus.inReview,
+                SupportPlatform = SupportPlatform.iOS
+            };
+        }
+    }
+
+
+}
+
