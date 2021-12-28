@@ -41,6 +41,8 @@
     {
         get
         {
+
+
             yield return new AnyWorkData
             {
                 Title = "RoutineTree",
@@ -49,6 +51,28 @@
                 ImagePath = "images/RoutineTree.png",
                 Status = WorkStatus.inReview,
                 SupportPlatform = SupportPlatform.iOS
+            };
+
+            yield return new AnyWorkData
+            {
+                Title = "Some web app/service",
+                Description = "My practice project using Vue and AWS",
+                ReadMoreURL = "",
+                ImagePath = "images/Noimage.png",
+                Status = WorkStatus.underDevelop,
+                SupportPlatform = SupportPlatform.web
+            };
+
+            // --- end ---
+
+            yield return new AnyWorkData
+            {
+                Title = "My homepage",
+                Description = "This website.",
+                ReadMoreURL = "",
+                ImagePath = "images/Noimage.png",
+                Status = WorkStatus.release,
+                SupportPlatform = SupportPlatform.web
             };
         }
     }
