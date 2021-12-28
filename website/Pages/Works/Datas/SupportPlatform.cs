@@ -8,7 +8,8 @@
         macOS = 0b00000010,
         windows = 0b00000100,
         linux = 0b00001000,
-        android = 0b00010000
+        android = 0b00010000,
+        web = 0b00100000,
     }
 }
 
