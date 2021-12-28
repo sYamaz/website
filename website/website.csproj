@@ -37,13 +37,13 @@
   <ItemGroup>
     <Folder Include="wwwroot\images\" />
     <Folder Include="Components\" />
-    <Folder Include="Pages\Apps\" />
+    <Folder Include="Pages\Works\" />
     <Folder Include="Pages\Index\" />
     <Folder Include="Pages\Posts\" />
     <Folder Include="Pages\Index\Parts\" />
     <Folder Include="Pages\Posts\Parts\" />
-    <Folder Include="Pages\Apps\Parts\" />
-    <Folder Include="Pages\Apps\Datas\" />
+    <Folder Include="Pages\Works\Parts\" />
+    <Folder Include="Pages\Works\Datas\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="Pages\image.png">
