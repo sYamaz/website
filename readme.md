@@ -1,4 +1,8 @@
-﻿# website
+> This project will no longer be updated.
+> 
+> Please see Vue.js version ; https://github.com/sYamaz/website-nuxt
+
+# website
 
 https://syamaz.github.io/website/
 
